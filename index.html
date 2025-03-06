@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+           background-color: #bdaba4; 
+        }
+        .cointener{
+            height:2400px;
+            width:1500px;
+            
+            display: block;
+            margin: 0 auto;
+            margin-top:200px;
+            border: 2px solid #985e47;
+            background-color: beige;
+
+        }
+        .img{
+             height: 700px;
+             width:700px;
+             display: block;
+             margin: 0 auto;
+             padding:80px;
+        }
+        .bag{
+            font-size: 120px;
+            padding-left: 60px;
+            text-align: center;
+            color:#985e47;
+        }
+        .box{
+            font-size: 70px;
+            padding-left: 40px;
+        }
+        .p{
+            font-size: 70px;
+            margin-left: 40px;
+            font-family:'bold';
+        }
+        .btn{
+            font-size: 90px;
+            display: block;
+            margin: 0 auto;
+            background-color: #985e47;
+            color:white;
+            border:none;
+            cursor: pointer;
+            border-radius:20px;
+            padding: 30px;
+
+        }
+        .plus{
+            height:200px;
+           
+            
+        }
+        .minus{
+            height:200px;
+           
+        }
+        .justify{
+            display: flex;
+            justify-content:center;
+           
+            align-items: center;
+            margin-bottom: 150px;
+        }
+        .quantityText{
+             font-size: 200px;
+             margin:0 200px;
+             
+           
+        }
+        @media screen and (max-width:900px){
+            .cointener{
+                width:500px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="cointener">
+        <img src="./img/bag1.png" class="img"/>
+        <h1 class="bag">Shoping Bag</h1>
+        <p class="box">
+            a bag or box of leather, fabric, plastic, or the like, held in the hand or carried by means of a handle or strap,
+             commonly used for holding money, personal grooming items, small purchases, etc.
+        </p>
+        <div class="p">Price:₹ 500/-</div>
+        <div class="justify">
+            <img src="./img/minus.png" class="minus " id="minus" onclick="decrease()"/>
+        <span class="quantityText" id="quantityText">1</span>
+        
+        <img src="./img/plus2.png" class="plus " id="plus" onclick="increase()"/>
+        </div>
+
+       <button class="btn">By Now</button>
+</div>
+    
+    <script>       
+       const quantityText=document.getElementById('quantityText');
+        function increase(){
+           let quantity=parseInt(quantityText.innerText)
+           if(quantity<10){
+           quantityText.innerText = ++quantity;
+           }
+           else{
+            alert("you can't more than 10  items at a time");
+           }
+        }
+        function decrease() {
+            let quantity=parseInt(quantityText.innerText)
+            if(quantity>1){
+            quantityText.innerText = --quantity;
+            }
+            else{
+            alert("you can't less than 1  items at a time");
+           }
+        }
+    </script>
+</body>
+</html>
